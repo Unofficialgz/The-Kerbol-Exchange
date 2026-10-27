@@ -1,6 +1,6 @@
 Building the source candidate
 
-Original C# and associated build/project files are MIT-licensed. Documentation is CC BY 4.0. Artwork is All Rights Reserved and excluded from this source distribution. See LICENSES.txt.
+All original source, build files, documentation and artwork are MIT-licensed. See LICENSES.txt.
 
 Install Visual Studio Build Tools with MSBuild, C# 7.3 support and the .NET Framework 4.7.2 targeting pack. Supply your own lawful KSP 1.12.5 installation with Harmony 2.2.1.0 and Click Through Blocker 2.1.10.23 installed. No KSP, Unity, font or dependency DLL is included.
 
@@ -12,4 +12,4 @@ The path is an example; supply your own installation. Alternatively pass /p:KspR
 
 Public outputs are bin/Release/KerbolExchange.dll and KerbolExchange.UI.dll. Internal OreMarket-named compiler outputs are intentional; do not install both names. Tests use doubles and do not simulate Unity gameplay. Building never installs into KSP.
 
-Artwork is intentionally excluded under its separate All Rights Reserved terms. DLL compilation and regressions do not require it. The UI retains generated fallbacks, but a complete binary release must include the approved textures from the separate runtime candidate. Do not bundle proprietary game assemblies or the dependency DLLs.
+This source archive omits artwork to keep the build download small; the unchanged MIT-licensed textures are included in the player archive. DLL compilation and regressions do not require it. The UI retains generated fallbacks, but a complete binary release must include the approved textures from the separate runtime candidate. Do not bundle proprietary game assemblies or the dependency DLLs.

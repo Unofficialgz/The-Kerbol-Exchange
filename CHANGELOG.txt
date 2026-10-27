@@ -6,3 +6,4 @@ Version 1.0.0
 - Market terminal with charts and price history.
 - Ore origin tracking and recovery payments.
 - Custom planet configuration support.
+- All original code, documentation and artwork released under MIT.

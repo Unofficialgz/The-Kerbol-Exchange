@@ -20,7 +20,7 @@ Planet packs require compatible stock harvesting and globally unique internal bo
 
 Update log: CHANGELOG.txt
 Licences and notices: LICENSES.txt
-Code: MIT. Documentation: CC BY 4.0. Original artwork: All Rights Reserved.
+All original code, documentation and artwork: MIT. Third-party terms remain separate.
 
 Developer: Unofficialgz
 Artwork by Unofficialgz
