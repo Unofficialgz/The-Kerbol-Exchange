@@ -1,0 +1,8 @@
+Version 1.0.0
+
+- Initial public release.
+- Planetary, asteroid and comet Ore mining and selling.
+- Dynamic prices and economic events.
+- Market terminal with charts and price history.
+- Ore origin tracking and recovery payments.
+- Custom planet configuration support.

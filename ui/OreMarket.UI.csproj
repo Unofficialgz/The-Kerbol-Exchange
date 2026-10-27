@@ -1,0 +1,35 @@
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <OutputType>Library</OutputType><AssemblyName>OreMarket.UI</AssemblyName><RootNamespace>OreMarket.Terminal</RootNamespace>
+    <ProjectGuid>{B2277F0D-E2B4-4E5B-9F36-ABF3F80741DF}</ProjectGuid>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion><LangVersion>7.3</LangVersion>
+    <OutputPath>..\bin\$(Configuration)\</OutputPath><Optimize>true</Optimize><Deterministic>true</Deterministic>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors><WarningLevel>4</WarningLevel><UseSharedCompilation>false</UseSharedCompilation>
+    <KspRoot Condition="'$(KspRoot)' == ''">$(KSP_ROOT)</KspRoot>
+    <KspManaged>$(KspRoot)\KSP_x64_Data\Managed</KspManaged>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugSymbols>true</DebugSymbols><DebugType>pdbonly</DebugType>
+    <PathMap>$(MSBuildProjectDirectory)=/_/KerbolExchange</PathMap>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" /><Reference Include="System.Core" />
+    <Reference Include="Assembly-CSharp"><HintPath>$(KspManaged)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(KspManaged)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(KspManaged)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(KspManaged)\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(KspManaged)\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(KspManaged)\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AnimationModule"><HintPath>$(KspManaged)\UnityEngine.AnimationModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ClickThroughBlocker"><HintPath>$(KspRoot)\GameData\000_ClickThroughBlocker\Plugins\ClickThroughBlocker.dll</HintPath><Private>false</Private></Reference>
+    <ProjectReference Include="..\OreMarket.csproj"><Project>{8384211A-4B11-46FC-A1C8-7682E87A72BA}</Project><Name>OreMarket</Name><Private>false</Private></ProjectReference>
+    <Compile Include="MarketModel.cs" /><Compile Include="TerminalAssets.cs" /><Compile Include="CompactMonitor.cs" /><Compile Include="ObjectSidebar.cs" /><Compile Include="TerminalHelp.cs" /><Compile Include="ChartRaster.cs" /><Compile Include="MarketTerminal.cs" /><Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="PublicReleaseFilename" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(TargetDir)KerbolExchange.UI.dll" />
+  </Target>
+</Project>
+

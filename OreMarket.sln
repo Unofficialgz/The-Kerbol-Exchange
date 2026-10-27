@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OreMarket", "OreMarket.csproj", "{8384211A-4B11-46FC-A1C8-7682E87A72BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OreMarket.UI", "ui\OreMarket.UI.csproj", "{B2277F0D-E2B4-4E5B-9F36-ABF3F80741DF}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {8384211A-4B11-46FC-A1C8-7682E87A72BA}.Debug|Any CPU.ActiveCfg = Debug|AnyCPU
+        {8384211A-4B11-46FC-A1C8-7682E87A72BA}.Debug|Any CPU.Build.0 = Debug|AnyCPU
+        {8384211A-4B11-46FC-A1C8-7682E87A72BA}.Release|Any CPU.ActiveCfg = Release|AnyCPU
+        {8384211A-4B11-46FC-A1C8-7682E87A72BA}.Release|Any CPU.Build.0 = Release|AnyCPU
+        {B2277F0D-E2B4-4E5B-9F36-ABF3F80741DF}.Debug|Any CPU.ActiveCfg = Debug|AnyCPU
+        {B2277F0D-E2B4-4E5B-9F36-ABF3F80741DF}.Debug|Any CPU.Build.0 = Debug|AnyCPU
+        {B2277F0D-E2B4-4E5B-9F36-ABF3F80741DF}.Release|Any CPU.ActiveCfg = Release|AnyCPU
+        {B2277F0D-E2B4-4E5B-9F36-ABF3F80741DF}.Release|Any CPU.Build.0 = Release|AnyCPU
+    EndGlobalSection
+EndGlobal

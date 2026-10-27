@@ -1,0 +1,45 @@
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <KspRoot Condition="'$(KspRoot)' == ''">$(KSP_ROOT)</KspRoot>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <Optimize Condition="'$(Configuration)' == 'Release'">true</Optimize>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>OreMarket.Tests</AssemblyName>
+    <OutputPath>bin\Release\</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <UseSharedCompilation>false</UseSharedCompilation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="0Harmony"><HintPath>$(KspRoot)\GameData\000_Harmony\0Harmony.dll</HintPath><Private>true</Private></Reference>
+    <Compile Include="..\src\StockOreTransfers.cs" /><Compile Include="..\src\SingleOriginStorage.cs" /><Compile Include="..\src\SafeObjectRelease.cs" /><Compile Include="..\src\StockCargoLogistics.cs" />
+    <Compile Include="..\src\TrackingState.cs"><Link>TrackingState.cs</Link></Compile>
+    <Compile Include="..\src\SamplingGuard.cs"><Link>SamplingGuard.cs</Link></Compile>
+    <Compile Include="..\src\ModuleSafetyInspector.cs"><Link>ModuleSafetyInspector.cs</Link></Compile><Compile Include="Program.cs" /><Compile Include="MultiTank072Tests.cs" /><Compile Include="SingleOrigin0721Tests.cs" /><Compile Include="Release0722Tests.cs" /><Compile Include="Logistics073Tests.cs" /><Compile Include="SharedRelease0731Tests.cs" /><Compile Include="Branding090Tests.cs" /><Compile Include="Presentation091Tests.cs" /><Compile Include="..\ui\TerminalAssets.cs" /><Compile Include="MarketTests.cs" /><Compile Include="Events060Tests.cs" /><Compile Include="Events061Tests.cs" /><Compile Include="Monitor062Tests.cs" /><Compile Include="Monitor063Tests.cs" /><Compile Include="Objects070Tests.cs" /><Compile Include="Objects071Tests.cs" /><Compile Include="ExtendedClassesTests.cs" /><Compile Include="CosmeticSwitchTests.cs" /><Compile Include="EngineBufferTests.cs" /><Compile Include="..\src\EngineBufferSafety.cs" /><Compile Include="..\src\CosmeticSwitchSafety.cs" /><Compile Include="..\src\ObjectMining.cs" /><Compile Include="..\src\ObjectMarkets.cs" /><Compile Include="..\ui\ObjectSidebar.cs" /><Compile Include="..\src\MarketMonitorQuery.cs" /><Compile Include="..\ui\CompactMonitor.cs" /><Compile Include="..\src\MarketMarkers.cs" /><Compile Include="..\ui\TerminalHelp.cs" /><Compile Include="..\src\MarketEvents.cs" /><Compile Include="Chart051Tests.cs" /><Compile Include="..\ui\ChartRaster.cs" /><Compile Include="..\src\MarketBook.cs" /><Compile Include="..\src\MarketScenario.cs" />
+    <Compile Include="KspStubs.cs" /><Compile Include="PlanetaryTests.cs" /><Compile Include="PricingTests.cs" /><Compile Include="TerminalTests.cs" /><Compile Include="..\ui\MarketModel.cs"><Link>MarketModel.cs</Link></Compile><Compile Include="..\src\OrePricing.cs"><Link>OrePricing.cs</Link></Compile><Compile Include="RecoveryTests.cs" /><Compile Include="..\src\RecoverySales.cs"><Link>RecoverySales.cs</Link></Compile>
+    <Compile Include="..\src\AbundanceWarningDiagnostics.cs"><Link>AbundanceWarningDiagnostics.cs</Link></Compile>
+    <Compile Include="..\src\OreOrigins.cs"><Link>OreOrigins.cs</Link></Compile>
+    <Compile Include="..\src\LiteralResourceArgument.cs"><Link>LiteralResourceArgument.cs</Link></Compile>
+    <Compile Include="..\src\MiningObserver.cs"><Link>MiningObserver.cs</Link></Compile>
+    <Compile Include="..\src\VesselRules.cs"><Link>VesselRules.cs</Link></Compile>
+    <Compile Include="..\src\OreMarketTank.cs"><Link>OreMarketTank.cs</Link></Compile>
+  </ItemGroup>
+  <ItemGroup><Content Include="..\GameData\KerbolExchange\Prices.cfg"><Link>Prices.cfg</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content></ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
+
+
+
+
+
+
+
+
+
+
+

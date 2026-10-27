@@ -1,0 +1,27 @@
+Planet-pack configurations
+
+Use exact case-sensitive CelestialBody.bodyName identifiers, not display names or indices. Globally unique names are required across all systems. Duplicate internal names fail closed; equal display names are fine. Names beginning OreMarket:Object: are reserved. Stars, bodies without solid surfaces, missing bodies and Kerbin are not marketable. Configuration never authorizes unsupported harvesting or untracked Ore.
+
+Planets/moons around other stars are resolved from the same loaded catalogue. Sidebar grouping follows parent relationships to the first star. Packs with binary-star hierarchies, custom harvesting or homeworld replacement need in-game testing. Recovery still requires the body's exact internal name Kerbin; a replacement homeworld is not automatically a sale location. Unlisted eligible bodies use fallbackPrice (currently 10).
+
+Edit the single Prices.cfg while KSP is closed, or use a ModuleManager patch. ModuleManager is needed only for patch processing and is not a core mod dependency. Never create a second OREMARKET_PRICES root or duplicate BODY entry. Fictional example for a separate compatibility cfg:
+
+@OREMARKET_PRICES:NEEDS[KerbolExchange]:AFTER[KerbolExchange]
+{
+    !BODY[ExamplePack_Asteria] {}
+    BODY
+    {
+        name = ExamplePack_Asteria
+        price = 85
+    }
+    !BODY[ExamplePack_AsteriaMoon] {}
+    BODY
+    {
+        name = ExamplePack_AsteriaMoon
+        price = 120
+    }
+}
+
+These names must exist in the pack; configuration alone cannot create them. Use a unique pack prefix. If other compatibility patches target the same identity, coordinate ordering; retain exactly one BODY entry. Config edits apply when KSP restarts; existing prices follow the existing configuration-change handling, not a separate pricing engine. Removing/renaming a pack body leaves stored provenance but prevents sale until its identity resolves again.
+
+Verified by source review and existing offline custom-body/fallback, duplicate identity/configuration and dynamic catalogue tests. Actual ModuleManager patch application and additional star-system gameplay were not run.
